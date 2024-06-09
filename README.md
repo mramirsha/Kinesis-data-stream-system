@@ -54,13 +54,16 @@ I used Parquet format because of following reasons:
 
 ### How would you test the different components of your proposed architecture?
 I will use unittest and pytest to test my python code, and adding this check to Git CI/CD to check it in merge requests.
-One important thing the aws that we can test the policies. It can be done with [Policy simulator](https://policysim.aws.amazon.com/)
+One important thing the aws that we can test the policies. It can be done with [Policy simulator](https://policysim.aws.amazon.com/).
+At the end I will deploy it first on test environment and test the process.
+
 ### How would you ensure the architecture deployed can be replicable across environments?
 As we are using Terraform and created a module for our architecture it could be replicate and deployed on other environments as well.
 
 ### Would your proposed solution still be the same if the amount of events is 1000 times smaller or bigger?
 Amazon Data Firehose has the feature that automatically scales so we still can use it but if the data get bigger and
 cost goes high, it may make sense to switch to spark batch streaming and get the data using spark.
+
 ### Would your proposed solution still be the same if adding fields / transforming the data is no longer needed?
 I would still use this approach without transform option (Still don't consider cost here)
 
