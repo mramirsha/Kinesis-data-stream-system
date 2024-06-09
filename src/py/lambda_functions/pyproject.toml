@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "kinesis-consumer"
+version = "0.1.0"
+description = "This is a simple kinesis data stream application"
+authors = ["amir.shakeri <amirmhmshakeri@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[[tool.poetry.source]]
+name = "pypi-default"
+url = "https://pypi.org/simple"
+
+[tool.poetry.group.dev.dependencies]
+black = "22.12.0"
+isort = "5.12.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "7.2.1"
+pytest-mock = "3.10.0"
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
